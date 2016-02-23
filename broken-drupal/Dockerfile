@@ -24,7 +24,7 @@ ADD ./foreground.sh /etc/apache2/foreground.sh
 ADD ./supervisord.conf /etc/supervisord.conf
 
 # Retrieve drupal
-RUN rm -rf /var/www/ ; cd /var ; drush dl drupal ; mv /var/drupal*/ /var/www/
+RUN rm -rf /var/www/ ; cd /var ; drush dl drupal-7.31 ; mv /var/drupal*/ /var/www/
 RUN chmod a+w /var/www/sites/default ; mkdir /var/www/sites/default/files ; chown -R www-data:www-data /var/www/
 
 RUN chmod 755 /start.sh /etc/apache2/foreground.sh
