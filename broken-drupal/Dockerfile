@@ -20,6 +20,7 @@ RUN sed -i "s/^bind-address/#bind-address/" /etc/mysql/my.cnf
 
 RUN easy_install supervisor
 ADD ./start.sh /start.sh
+ADD ./prod.sql /prod.sql
 ADD ./foreground.sh /etc/apache2/foreground.sh
 ADD ./supervisord.conf /etc/supervisord.conf
 
